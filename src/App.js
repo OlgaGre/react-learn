@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+// Выведите элементы этого массива в виде списка ul.
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const users = [
+    {name: 'user1', surn: 'surn1', age: 30},
+    {name: 'user2', surn: 'surn2', age: 31},
+    {name: 'user3', surn: 'surn3', age: 32},
+  ];
+  const res = users.map(function (item, i) {
+    return <li key={i}>{item.name}, {item.surn}, {item.age}</li>
+    
+  })
+	
+	return <div>
+		{res}
+	</div>;
 }
 
 export default App;
